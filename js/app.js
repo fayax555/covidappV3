@@ -124,20 +124,28 @@ const washState = function (page) {
          </div>
 
          <div class="navigation">
-            <label for="r1" class="bar">1</label>
-            <label for="r2" class="bar">2</label>
-            <label for="r3" class="bar">3</label>
-            <label for="r4" class="bar">4</label>
-            <label for="r5" class="bar">5</label>
-            <label for="r6" class="bar">6</label>
-            <label for="r7" class="bar">7</label>
-            <label for="r8" class="bar">8</label>
-            <label for="r9" class="bar">9</label>
-            <label for="r10" class="bar">10</label>
+            <label for="r1" class="bar bar1">1</label>
+            <label for="r2" class="bar bar2">2</label>
+            <label for="r3" class="bar bar3">3</label>
+            <label for="r4" class="bar bar4">4</label>
+            <label for="r5" class="bar bar5">5</label>
+            <label for="r6" class="bar bar6">6</label>
+            <label for="r7" class="bar bar7">7</label>
+            <label for="r8" class="bar bar8">8</label>
+            <label for="r9" class="bar bar9">9</label>
+            <label for="r10" class="bar bar10">10</label>
          </div>
       </div>
    </div>`;
 };
+
+document.querySelector('#mainApp').addEventListener('click', (e) => {
+   for (let i = 1; i < 11; i++) {
+      if (e.target.classList.contains(`bar${i}`)) {
+         new Audio(`./assets/washaudio/wash${i}.mp3`).play();
+      }
+   }
+});
 
 const covidUpdatesState = function () {
    document.querySelector('.mainContainer').innerHTML = `
@@ -194,6 +202,7 @@ document.getElementById('mainApp').addEventListener('click', (e) => {
    }
    if (e.target.classList.contains('item-2')) {
       page.change(new washState());
+      new Audio('./assets/washaudio/wash1.mp3').play();
    }
    if (e.target.classList.contains('item-3')) {
       page.change(new covidUpdatesState());
