@@ -99,7 +99,7 @@ const washState = function (page) {
    }
    document.querySelector('.mainContainer').innerHTML = `
    <div class="washbox">
-   <button class='btnStartSlides'>START</button>
+   <button class='btn btnStartSlides'>START</button>
       <div class="slidershow middle">
          <div class="slides">
             <input type="radio" name="r" id="r1" checked />
@@ -212,26 +212,34 @@ mainApp.addEventListener('click', (e) => {
             }
          }
       });
-      // new Audio(...).stop() --- if stop is pressed
 
+      // implementing start/stop function for hand washing auto sliding part
       const btnStartSlides = mainApp.querySelector('.btnStartSlides');
       let interval = null;
-      let i = 1;
+      let iteratorWhenSliding = 0;
       let btnClickCounter = 0;
       btnStartSlides.addEventListener('click', (e) => {
-         console.log(btnClickCounter);
+         e.target.innerText = 'STOP';
+         e.target.style.backgroundColor = 'red';
+         console.log(`btnClickCounter: ${btnClickCounter}`);
          if (btnClickCounter % 2 === 0) {
+            mainApp.querySelector(`.bar1`).click();
             interval = setInterval(() => {
-               if (i < 11) {
-                  mainApp.querySelector(`.bar${i}`).click();
-                  i++;
-                  console.log(i);
+               if (iteratorWhenSliding < 11) {
+                  mainApp
+                     .querySelector(`.bar${iteratorWhenSliding + 2}`)
+                     .click();
+                  iteratorWhenSliding++;
+                  console.log(`iterator: ${iteratorWhenSliding}`);
                }
-            }, 3000);
+            }, 2700);
             btnClickCounter++;
          } else if (btnClickCounter % 2 === 1) {
             clearInterval(interval);
+            iteratorWhenSliding = 0;
             btnClickCounter++;
+            e.target.innerText = 'START';
+            e.target.style.backgroundColor = 'green';
          }
       });
    }

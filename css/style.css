@@ -289,6 +289,10 @@ input[name='r'] {
    border: none;
 }
 
+.btnStartSlides:hover {
+   opacity: 0.6;
+}
+
 .washbox .washContainer {
    background-color: white;
    min-height: 300px;
