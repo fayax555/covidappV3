@@ -12,6 +12,21 @@ class PageState {
    }
 }
 
+// setTimeout(() => {
+//    document.querySelector('#mainApp').addEventListener('click', (e) => {
+//       // console.log(e.target.classList);
+//       if (e.target.classList.contains('.item-2')) {
+//          console.log(e.target.classList.contains('.bar'));
+//          if (e.target.classList.contains('.bar')) {
+//             // console.log(e.target.parentElement.querySelector('.bar2'));
+//             // console.log(e.target.parentElement.querySelector('.bar2'));
+//             e.target.parentElement.querySelector('.bar2').click();
+//             // document.querySelector('e.target').click();
+//          }
+//       }
+//    });
+// }, 100);
+
 // Home State
 const homeState = function (page) {
    document.querySelector('#mainApp').innerHTML = `
@@ -139,13 +154,13 @@ const washState = function (page) {
    </div>`;
 };
 
-document.querySelector('#mainApp').addEventListener('click', (e) => {
-   for (let i = 1; i < 11; i++) {
-      if (e.target.classList.contains(`bar${i}`)) {
-         new Audio(`./assets/washaudio/wash${i}.mp3`).play();
-      }
-   }
-});
+// document.querySelector('#mainApp').addEventListener('click', (e) => {
+//    // for (let i = 1; i < 11; i++) {
+//    //    if (e.target.classList.contains(`bar${i}`)) {
+//    //       new Audio(`./assets/washaudio/wash${i}.mp3`).play();
+//    //    }
+//    // }
+// });
 
 const covidUpdatesState = function () {
    document.querySelector('.mainContainer').innerHTML = `
@@ -271,11 +286,15 @@ function quizCodes() {
    function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
+      var score = 0;
+
       if (correct) {
          ans.className = 'txt-green';
          ans.textContent = 'CORRECT!';
          new Audio('./assets/audio/correct.mp3').play();
          selectedButton.classList.add('bg-green');
+         score = score + 1;
+         console.log(score);
       } else {
          ans.className = 'txt-red';
          ans.textContent = 'WRONG!';
