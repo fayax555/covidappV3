@@ -99,7 +99,7 @@ const washState = function (page) {
    }
    document.querySelector('.mainContainer').innerHTML = `
    <div class="washbox">
-   <button class='btn btnStartSlides'>START</button>
+   <button class='btnStartSlides'>START</button>
       <div class="slidershow middle">
          <div class="slides">
             <input type="radio" name="r" id="r1" checked />
@@ -216,7 +216,7 @@ mainApp.addEventListener('click', (e) => {
       // implementing start/stop function for hand washing auto sliding part
       const btnStartSlides = mainApp.querySelector('.btnStartSlides');
       let interval = null;
-      let iteratorWhenSliding = 0;
+      let i = 0;
       let btnClickCounter = 0;
       btnStartSlides.addEventListener('click', (e) => {
          e.target.innerText = 'STOP';
@@ -225,18 +225,16 @@ mainApp.addEventListener('click', (e) => {
          if (btnClickCounter % 2 === 0) {
             mainApp.querySelector(`.bar1`).click();
             interval = setInterval(() => {
-               if (iteratorWhenSliding < 11) {
-                  mainApp
-                     .querySelector(`.bar${iteratorWhenSliding + 2}`)
-                     .click();
-                  iteratorWhenSliding++;
-                  console.log(`iterator: ${iteratorWhenSliding}`);
+               if (i < 9) {
+                  mainApp.querySelector(`.bar${i + 2}`).click();
+                  i++;
+                  console.log(`iterator: ${i}`);
                }
             }, 2700);
             btnClickCounter++;
-         } else if (btnClickCounter % 2 === 1) {
+         } else if (btnClickCounter % 2 === 1 || !washState) {
             clearInterval(interval);
-            iteratorWhenSliding = 0;
+            i = 0;
             btnClickCounter++;
             e.target.innerText = 'START';
             e.target.style.backgroundColor = 'green';

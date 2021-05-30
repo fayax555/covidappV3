@@ -347,6 +347,10 @@ input[name='r'] {
 #r10:checked ~ .s1 {
    margin-left: -185%;
 }
+/* 
+label:active {
+   background-color: #7a1bb1;
+} */
 
 /* Quiz */
 #question-container {
