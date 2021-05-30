@@ -154,13 +154,13 @@ const washState = function (page) {
    </div>`;
 };
 
-// document.querySelector('#mainApp').addEventListener('click', (e) => {
-//    // for (let i = 1; i < 11; i++) {
-//    //    if (e.target.classList.contains(`bar${i}`)) {
-//    //       new Audio(`./assets/washaudio/wash${i}.mp3`).play();
-//    //    }
-//    // }
-// });
+document.querySelector('#mainApp').addEventListener('click', (e) => {
+   for (let i = 1; i < 11; i++) {
+      if (e.target.classList.contains(`bar${i}`)) {
+         new Audio(`./assets/washaudio/wash${i}.mp3`).play();
+      }
+   }
+});
 
 const covidUpdatesState = function () {
    document.querySelector('.mainContainer').innerHTML = `
