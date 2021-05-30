@@ -280,13 +280,24 @@ input[name='r'] {
 
 .washbox .btnStartSlides {
    padding: 0.75rem 1.5rem;
-   margin-top: -1.5rem;
+   margin-top: -0.5rem;
    margin-left: 0;
    background-color: green;
    color: #fff;
    font-size: 1.1rem;
    cursor: pointer;
    border: none;
+}
+
+.btnStartBox {
+   display: flex;
+}
+
+.btnStartBox p {
+   padding-left: 1rem;
+   font-size: 1.15rem;
+   font-weight: bold;
+   color: #6b0fa0;
 }
 
 .btnStartSlides:hover {
@@ -347,6 +358,7 @@ input[name='r'] {
 #r10:checked ~ .s1 {
    margin-left: -185%;
 }
+
 /* 
 label:active {
    background-color: #7a1bb1;

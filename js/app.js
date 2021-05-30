@@ -1,19 +1,18 @@
-class PageState {
-   constructor() {
-      let currentState = new homeState(this);
+const PageState = function () {
+   let currentState = new homeState(this);
 
-      this.init = function () {
-         this.change(new homeState());
-      };
+   this.init = function () {
+      this.change(new homeState());
+   };
 
-      this.change = function (state) {
-         currentState = state;
-      };
-   }
-}
+   this.change = function (state) {
+      currentState = state;
+   };
+};
 
 // Home State
 const homeState = function (page) {
+   /*html*/
    document.querySelector('#mainApp').innerHTML = `
    <div id="header">
       <div class="container">
@@ -36,6 +35,7 @@ const homeState = function (page) {
 };
 
 const creditsState = function () {
+   /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div id="content" class="container">
       <div class="personContainer">
@@ -62,10 +62,11 @@ const creditsState = function () {
 
 // Safety State
 const safetyState = function (page) {
+   /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div class="container">
       <div class='safetyPic'>
-      <img src="img/precautions.jpg" width="700" height="600">
+         <img src="img/precautions.jpg" width="700" height="600">
       </div>
    </div>
 `;
@@ -85,6 +86,7 @@ const washState = function (page) {
       'Dry hands with paper towel',
       'Turn off tap with paper towel',
    ];
+   /*html*/
    for (let i = 2; i < 11; i++) {
       html += `
       <div class="slide">
@@ -97,50 +99,56 @@ const washState = function (page) {
          </div>
       </div>`;
    }
+
+   /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div class="washbox">
-   <button class='btnStartSlides'>START</button>
-      <div class="slidershow middle">
-         <div class="slides">
-            <input type="radio" name="r" id="r1" checked />
-            <input type="radio" name="r" id="r2" />
-            <input type="radio" name="r" id="r3" />
-            <input type="radio" name="r" id="r4" />
-            <input type="radio" name="r" id="r5" />
-            <input type="radio" name="r" id="r6" />
-            <input type="radio" name="r" id="r7" />
-            <input type="radio" name="r" id="r8" />
-            <input type="radio" name="r" id="r9" />
-            <input type="radio" name="r" id="r10" />
-            <div class="slide s1">
-               <div class="washContainer">
-                  <div class="washContent">
-                     <img src="img/wash/1.jpg" alt="" />
-                     <p class="number">1</p>
-                     <p class="text">Wet hands with water</p>
+      <div class="btnStartBox">
+         <button class='btnStartSlides'>START</button>
+         <p>The slideshow is current playing. Please stop the slideshow first before going back</p>
+      </div>
+         <div class="slidershow middle">
+            <div class="slides">
+               <input type="radio" name="r" id="r1" checked />
+               <input type="radio" name="r" id="r2" />
+               <input type="radio" name="r" id="r3" />
+               <input type="radio" name="r" id="r4" />
+               <input type="radio" name="r" id="r5" />
+               <input type="radio" name="r" id="r6" />
+               <input type="radio" name="r" id="r7" />
+               <input type="radio" name="r" id="r8" />
+               <input type="radio" name="r" id="r9" />
+               <input type="radio" name="r" id="r10" />
+               <div class="slide s1">
+                  <div class="washContainer">
+                     <div class="washContent">
+                        <img src="img/wash/1.jpg" alt="" />
+                        <p class="number">1</p>
+                        <p class="text">Wet hands with water</p>
+                     </div>
                   </div>
                </div>
+               ${html}
             </div>
-            ${html}
-         </div>
 
-         <div class="navigation">
-            <label for="r1" class="bar bar1">1</label>
-            <label for="r2" class="bar bar2">2</label>
-            <label for="r3" class="bar bar3">3</label>
-            <label for="r4" class="bar bar4">4</label>
-            <label for="r5" class="bar bar5">5</label>
-            <label for="r6" class="bar bar6">6</label>
-            <label for="r7" class="bar bar7">7</label>
-            <label for="r8" class="bar bar8">8</label>
-            <label for="r9" class="bar bar9">9</label>
-            <label for="r10" class="bar bar10">10</label>
+            <div class="navigation">
+               <label for="r1" class="bar bar1">1</label>
+               <label for="r2" class="bar bar2">2</label>
+               <label for="r3" class="bar bar3">3</label>
+               <label for="r4" class="bar bar4">4</label>
+               <label for="r5" class="bar bar5">5</label>
+               <label for="r6" class="bar bar6">6</label>
+               <label for="r7" class="bar bar7">7</label>
+               <label for="r8" class="bar bar8">8</label>
+               <label for="r9" class="bar bar9">9</label>
+               <label for="r10" class="bar bar10">10</label>
+            </div>
          </div>
-      </div>
    </div>`;
 };
 
 const covidUpdatesState = function () {
+   /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div class="container">
       <div class='safetyPic'>
@@ -151,21 +159,22 @@ const covidUpdatesState = function () {
 };
 
 const quizState = function () {
+   /*html*/
    document.querySelector('.mainContainer').innerHTML = `<div class="container">
    <div id="question-container" class="hide">
-   <div id="ans"></div>
-      <div id="question">Question</div>
-      <div id="answer-buttons" class="btn-grid">
-         <button class="btnQuiz">Answer 1</button>
-         <button class="btnQuiz">Answer 2</button>
-         <button class="btnQuiz">Answer 3</button>
+      <div id="ans"></div>
+         <div id="question">Question</div>
+         <div id="answer-buttons" class="btn-grid">
+            <button class="btnQuiz">Answer 1</button>
+            <button class="btnQuiz">Answer 2</button>
+            <button class="btnQuiz">Answer 3</button>
+         </div>
+      </div>
+      <div class="controls">
+         <button id="start-btn" class="start-btn btnQuiz">Start</button>
+         <button id="next-btn" class="next-btn btnQuiz hide">Next</button>
       </div>
    </div>
-   <div class="controls">
-      <button id="start-btn" class="start-btn btnQuiz">Start</button>
-      <button id="next-btn" class="next-btn btnQuiz hide">Next</button>
-   </div>
-</div>
 `;
 };
 
@@ -187,24 +196,18 @@ const quiz = document.getElementById('quiz');
 /* On starup, make user select a theme for the app. (also make user enter color name in the text box). */
 // --------- USE THIS CODE ----------------
 const style = document.querySelector('style');
-// style.innerHTML += `
-//    .btnContainer {
-//       background-color: #1e7160;
-//    }
-//    `;
 
+const myCssStyle = /*css*/ `
+   .btnContainer { 
+      background-color: #1e7160;  
+   }
+`;
+
+let isSlideShowPlaying = false;
 mainApp.addEventListener('click', (e) => {
-   if (e.target.classList.contains('btnHome')) {
-      page.change(new homeState());
-   }
-   if (e.target.classList.contains('btnCredits')) {
-      page.change(new creditsState());
-   }
-   if (e.target.classList.contains('item-1')) {
-      page.change(new safetyState());
-   }
    if (e.target.classList.contains('item-2')) {
       page.change(new washState());
+      mainApp.querySelector('.btnStartBox p').style.display = 'none';
       document.querySelector('#mainApp').addEventListener('click', (e) => {
          for (let i = 1; i < 11; i++) {
             if (e.target.classList.contains(`bar${i}`)) {
@@ -212,40 +215,70 @@ mainApp.addEventListener('click', (e) => {
             }
          }
       });
-
       // implementing start/stop function for hand washing auto sliding part
       const btnStartSlides = mainApp.querySelector('.btnStartSlides');
+
       let interval = null;
       let i = 0;
       let btnClickCounter = 0;
       btnStartSlides.addEventListener('click', (e) => {
+         isSlideShowPlaying = true;
+         mainApp.querySelector('.btnStartBox p').style.display = 'block';
+
+         style.innerHTML += `
+            #mainApp .navigation {
+               pointer-events: none;
+            }
+         `;
          e.target.innerText = 'STOP';
          e.target.style.backgroundColor = 'red';
-         console.log(`btnClickCounter: ${btnClickCounter}`);
+         // console.log(e.target.classList.contains('item-2'));
          if (btnClickCounter % 2 === 0) {
             mainApp.querySelector(`.bar1`).click();
             interval = setInterval(() => {
                if (i < 9) {
                   mainApp.querySelector(`.bar${i + 2}`).click();
                   i++;
-                  console.log(`iterator: ${i}`);
+                  // console.log(i);
+               } else if (i >= 9) {
+                  // console.log(i);
+                  clearInterval(interval);
+                  i = 0;
+                  btnClickCounter++;
+                  e.target.innerText = 'START';
+                  e.target.style.backgroundColor = 'green';
+                  isSlideShowPlaying = false;
+                  mainApp.querySelector('.btnStartBox p').style.display =
+                     'none';
                }
             }, 2700);
             btnClickCounter++;
-         } else if (btnClickCounter % 2 === 1 || !washState) {
+         } else if (btnClickCounter % 2 === 1) {
             clearInterval(interval);
             i = 0;
             btnClickCounter++;
             e.target.innerText = 'START';
             e.target.style.backgroundColor = 'green';
+            mainApp.querySelector('.btnStartBox p').style.display = 'none';
+            isSlideShowPlaying = false;
          }
       });
    }
 
-   if (e.target.classList.contains('item-3')) {
+   if (e.target.classList.contains('btnHome') && !isSlideShowPlaying) {
+      page.change(new homeState());
+   }
+   if (e.target.classList.contains('btnCredits') && !isSlideShowPlaying) {
+      page.change(new creditsState());
+   }
+   if (e.target.classList.contains('item-1') && !isSlideShowPlaying) {
+      page.change(new safetyState());
+   }
+
+   if (e.target.classList.contains('item-3') && !isSlideShowPlaying) {
       page.change(new covidUpdatesState());
    }
-   if (e.target.classList.contains('item-4')) {
+   if (e.target.classList.contains('item-4') && !isSlideShowPlaying) {
       quizCodes();
    }
 });
@@ -317,7 +350,6 @@ function quizCodes() {
          new Audio('./assets/audio/correct.mp3').play();
          selectedButton.classList.add('bg-green');
          score++;
-         console.log(score);
       } else {
          ans.className = 'txt-red';
          ans.textContent = 'WRONG!';
