@@ -99,7 +99,7 @@ const washState = function (page) {
    }
    document.querySelector('.mainContainer').innerHTML = `
    <div class="washbox">
-   <button class='btn btnStartSlides'>START</button>
+   <button class='btnStartSlides'>START</button>
       <div class="slidershow middle">
          <div class="slides">
             <input type="radio" name="r" id="r1" checked />
@@ -139,14 +139,6 @@ const washState = function (page) {
       </div>
    </div>`;
 };
-
-document.querySelector('#mainApp').addEventListener('click', (e) => {
-   for (let i = 1; i < 11; i++) {
-      if (e.target.classList.contains(`bar${i}`)) {
-         new Audio(`./assets/washaudio/wash${i}.mp3`).play();
-      }
-   }
-});
 
 const covidUpdatesState = function () {
    document.querySelector('.mainContainer').innerHTML = `
@@ -192,6 +184,15 @@ const wash = document.getElementById('wash');
 const covidUpdates = document.getElementById('covidUpdates');
 const quiz = document.getElementById('quiz');
 
+/* On starup, make user select a theme for the app. (also make user enter color name in the text box). */
+// --------- USE THIS CODE ----------------
+const style = document.querySelector('style');
+// style.innerHTML += `
+//    .btnContainer {
+//       background-color: #1e7160;
+//    }
+//    `;
+
 mainApp.addEventListener('click', (e) => {
    if (e.target.classList.contains('btnHome')) {
       page.change(new homeState());
@@ -204,19 +205,37 @@ mainApp.addEventListener('click', (e) => {
    }
    if (e.target.classList.contains('item-2')) {
       page.change(new washState());
-      // new Audio('./assets/washaudio/wash1.mp3').play();
-      mainApp
-         .querySelector('.btnStartSlides')
-         .addEventListener('click', (e) => {
-            let increment = 2500;
-            for (let i = 0; i < 10; i++) {
-               setTimeout(() => {
-                  mainApp.querySelector(`.bar${i + 1}`).click();
-               }, increment);
-               increment += 2500;
+      document.querySelector('#mainApp').addEventListener('click', (e) => {
+         for (let i = 1; i < 11; i++) {
+            if (e.target.classList.contains(`bar${i}`)) {
+               new Audio(`./assets/washaudio/wash${i}.mp3`).play();
             }
-         });
+         }
+      });
+      // new Audio(...).stop() --- if stop is pressed
+
+      const btnStartSlides = mainApp.querySelector('.btnStartSlides');
+      let interval = null;
+      let i = 1;
+      let btnClickCounter = 0;
+      btnStartSlides.addEventListener('click', (e) => {
+         console.log(btnClickCounter);
+         if (btnClickCounter % 2 === 0) {
+            interval = setInterval(() => {
+               if (i < 11) {
+                  mainApp.querySelector(`.bar${i}`).click();
+                  i++;
+                  console.log(i);
+               }
+            }, 3000);
+            btnClickCounter++;
+         } else if (btnClickCounter % 2 === 1) {
+            clearInterval(interval);
+            btnClickCounter++;
+         }
+      });
    }
+
    if (e.target.classList.contains('item-3')) {
       page.change(new covidUpdatesState());
    }
@@ -225,10 +244,11 @@ mainApp.addEventListener('click', (e) => {
    }
 });
 
+// --------- TODO: SHOW SCORE AT THE END OF THE GAME --------------
 function quizCodes() {
    page.change(new quizState());
-
    // Quiz code
+   let score = 0;
    const startButton = document.getElementById('start-btn');
    const nextButton = document.getElementById('next-btn');
    const ans = document.getElementById('ans');
@@ -284,14 +304,13 @@ function quizCodes() {
    function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
-      var score = 0;
 
       if (correct) {
          ans.className = 'txt-green';
          ans.textContent = 'CORRECT!';
          new Audio('./assets/audio/correct.mp3').play();
          selectedButton.classList.add('bg-green');
-         score = score + 1;
+         score++;
          console.log(score);
       } else {
          ans.className = 'txt-red';
