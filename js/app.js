@@ -86,13 +86,14 @@ const washState = function (page) {
       'Dry hands with paper towel',
       'Turn off tap with paper towel',
    ];
-   /*html*/
+
    for (let i = 2; i < 11; i++) {
+      /*html*/
       html += `
       <div class="slide">
          <div class="washContainer">
             <div class="washContent">
-               <img src="img/wash/${i}.JPG" alt="" />
+               <img src="img/wash/${i}.jpg" alt="" />
                <p class="number">${i}</p>
                <p class="text">${textArray[i - 2]}</p>
             </div>
