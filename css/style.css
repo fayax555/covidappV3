@@ -92,12 +92,12 @@ body {
 .item-1 {
    background: url('../img/safety.jpg') no-repeat center center/cover;
 }
-.item-2 {
+/* .item-2 {
    background: url('../img/wash.jpg') no-repeat center center/cover;
 }
 .item-2:hover {
    background: url('../img/wash.gif') no-repeat center center/cover;
-}
+} */
 .item-3 {
    background: url('../img/update.jpg') no-repeat center center/cover;
 }

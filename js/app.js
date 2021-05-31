@@ -288,14 +288,27 @@ const quiz = document.getElementById('quiz');
 
 /* On starup, make user select a theme for the app. (also make user enter color name in the text box). */
 // --------- USE THIS CODE ----------------
+// const style = document.querySelector('style');
+
+// const myCssStyle = /*css*/ `
+//    .btnContainer {
+//       background-color: #1e7160;
+//    }
+// `;
+
 const style = document.querySelector('style');
 
-const myCssStyle = /*css*/ `
-   .btnContainer { 
-      background-color: #1e7160;  
-   }
-`;
+const btnWashStyle = /* css */ `
+.item-2 {
+   background: url('../img/wash.jpg') no-repeat center center/cover;
+}
+.item-2:hover {
+   background: url('../img/wash.gif') no-repeat center center/cover;
+}`;
 
+style.innerHTML += btnWashStyle;
+
+/* ------------------------------------------- */
 let isSlideShowPlaying = false;
 function playWashAudio(t) {
    for (let i = 1; i < 11; i++) {
