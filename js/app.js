@@ -73,40 +73,39 @@ const safetyState = function (page) {
 };
 
 // Wash State
-const washState = function (page) {
-   let html = '';
-   let textArray = [
-      'Apply soap',
-      'Make sure to wash for at least 20 seconds',
-      'Make sure to wash Palm and back of each hand',
-      'Make sure to wash between fingers',
-      'Make sure to wash under nails',
-      'Make sure to wash thumbs',
-      'Rinse well',
-      'Dry hands with paper towel',
-      'Turn off tap with paper towel',
-   ];
-
-   for (let i = 2; i < 11; i++) {
-      /*html*/
-      html += `
-      <div class="slide">
-         <div class="washContainer">
-            <div class="washContent">
-               <img src="img/washImages/${i}.jpg" alt="" />
-               <p class="number">${i}</p>
-               <p class="text">${textArray[i - 2]}</p>
-            </div>
+let textArray = [
+   'Apply soap',
+   'Make sure to wash for at least 20 seconds',
+   'Make sure to wash Palm and back of each hand',
+   'Make sure to wash between fingers',
+   'Make sure to wash under nails',
+   'Make sure to wash thumbs',
+   'Rinse well',
+   'Dry hands with paper towel',
+   'Turn off tap with paper towel',
+];
+let WashhtmlCode = '';
+for (let i = 2; i < 11; i++) {
+   /*html*/
+   WashhtmlCode += `
+   <div class="slide">
+      <div class="washContainer">
+         <div class="washContent">
+            <img src="img/washImages/${i}.jpg" alt="" />
+            <p class="number">${i}</p>
+            <p class="text">${textArray[i - 2]}</p>
          </div>
-      </div>`;
-   }
+      </div>
+   </div>`;
+}
 
+const washState = function (page) {
    /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div class="washbox">
       <div class="btnStartBox">
          <button class='btnStartSlides'>START</button>
-         <p>The slideshow is current playing. Stop the slideshow first before going back</p>
+         <p>The slideshow is current playing. Stop the slideshow before going back</p>
       </div>
          <div class="slidershow middle">
             <div class="slides">
@@ -129,7 +128,7 @@ const washState = function (page) {
                      </div>
                   </div>
                </div>
-               ${html}
+               ${WashhtmlCode}
             </div>
 
             <div class="navigation">
@@ -298,17 +297,20 @@ const myCssStyle = /*css*/ `
 `;
 
 let isSlideShowPlaying = false;
+function playWashAudio(t) {
+   for (let i = 1; i < 11; i++) {
+      if (t.classList.contains(`bar${i}`)) {
+         new Audio(`./assets/washaudio/wash${i}.mp3`).play();
+      }
+   }
+}
 mainApp.addEventListener('click', (e) => {
    if (e.target.classList.contains('item-2')) {
       page.change(new washState());
       mainApp.querySelector('.btnStartBox p').style.display = 'none';
-      document.querySelector('#mainApp').addEventListener('click', (e) => {
-         for (let i = 1; i < 11; i++) {
-            if (e.target.classList.contains(`bar${i}`)) {
-               new Audio(`./assets/washaudio/wash${i}.mp3`).play();
-            }
-         }
-      });
+      // document.querySelector('#mainApp').addEventListener('click', (e) => {
+      //    playWashAudio(e.target); // play wash audio for each bar clicked
+      // });
       // implementing start/stop function for hand washing auto sliding part
       const btnStartSlides = mainApp.querySelector('.btnStartSlides');
 
@@ -319,23 +321,22 @@ mainApp.addEventListener('click', (e) => {
          isSlideShowPlaying = true;
          mainApp.querySelector('.btnStartBox p').style.display = 'block';
 
-         style.innerHTML += `
-            #mainApp .navigation {
-               pointer-events: none;
-            }
-         `;
+         // style.innerHTML += `
+         //    #mainApp .navigation {
+         //       pointer-events: none;
+         //    }
+         // `;
          e.target.innerText = 'STOP';
          e.target.style.backgroundColor = 'red';
-         // console.log(e.target.classList.contains('item-2'));
          if (btnClickCounter % 2 === 0) {
             mainApp.querySelector(`.bar1`).click();
+            new Audio(`./assets/washaudio/wash1.mp3`).play();
             interval = setInterval(() => {
                if (i < 9) {
                   mainApp.querySelector(`.bar${i + 2}`).click();
+                  new Audio(`./assets/washaudio/wash${i + 2}.mp3`).play();
                   i++;
-                  // console.log(i);
                } else if (i >= 9) {
-                  // console.log(i);
                   clearInterval(interval);
                   i = 0;
                   btnClickCounter++;
