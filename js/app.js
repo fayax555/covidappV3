@@ -105,7 +105,7 @@ const washState = function (page) {
    <div class="washbox">
       <div class="btnStartBox">
          <button class='btnStartSlides'>START</button>
-         <p>The slideshow is current playing. Stop the slideshow before going back</p>
+         <p>The slideshow is current playing. Stop the slideshow before going back!</p>
       </div>
          <div class="slidershow middle">
             <div class="slides">
@@ -379,6 +379,8 @@ mainApp.addEventListener('click', (e) => {
 });
 
 // --------- TODO: SHOW SCORE AT THE END OF THE GAME --------------
+const correctAnswerAudio = new Audio('./assets/audio/correct.mp3');
+const wrongAnswerAudio = new Audio('./assets/audio/wrong.mp3');
 function quizCodes() {
    page.change(new quizState());
    // Quiz code
@@ -442,13 +444,13 @@ function quizCodes() {
       if (correct) {
          ans.className = 'txt-green';
          ans.textContent = 'CORRECT!';
-         new Audio('./assets/audio/correct.mp3').play();
+         correctAnswerAudio.play();
          selectedButton.classList.add('bg-green');
          score++;
       } else {
          ans.className = 'txt-red';
          ans.textContent = 'WRONG!';
-         new Audio('./assets/audio/wrong.mp3').play();
+         wrongAnswerAudio.play();
          selectedButton.classList.add('bg-red');
       }
       if (shuffledQuestions.length > currentQuestionIndex + 1) {
