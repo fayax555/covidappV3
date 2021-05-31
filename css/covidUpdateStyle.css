@@ -1,0 +1,86 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+#mainCard {
+   max-width: 900px;
+   margin: auto;
+   padding: 1rem 0;
+   white-space: nowrap;
+   margin-top: 1rem;
+   line-height: 1.2;
+}
+
+#mainCard .col div p {
+   text-align: center;
+   padding: 0.25rem 0.1rem;
+}
+
+.heading {
+   background-color: rgb(226, 72, 72);
+   padding: 1.25rem;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 1rem;
+}
+
+.heading h2 {
+   font-size: 2rem;
+   margin-bottom: 0.2rem;
+}
+
+.heading p {
+   font-size: 1.3rem;
+}
+
+.right p {
+   font-size: 1.7rem;
+   text-align: center;
+}
+
+.col-1 {
+   display: flex;
+   justify-content: space-evenly;
+   max-width: 850px;
+   margin: 2rem auto;
+}
+
+.col-1 div {
+   padding: 0.5rem 1rem;
+}
+
+.num {
+   font-weight: bold;
+   font-size: 1.8rem;
+}
+
+.text {
+   font-size: 1rem;
+}
+
+#mainCard .col-1 .highlight {
+   background-color: #fcc7c7 !important;
+   border-radius: 5px;
+   padding: 0.5rem 1rem;
+}
+
+#mainCard .col-1 .newCasesToday {
+   margin-right: 1rem;
+}
+
+.col-2 {
+   display: flex;
+   border: 1px dashed rgb(151, 21, 21);
+   border-radius: 15px;
+   justify-content: space-evenly;
+   max-width: 880px;
+   margin: 2rem auto;
+   padding: 1rem 0;
+}
+
+.bottomText {
+   text-align: center;
+}

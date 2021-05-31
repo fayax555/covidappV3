@@ -150,11 +150,104 @@ const washState = function (page) {
 const covidUpdatesState = function () {
    /*html*/
    document.querySelector('.mainContainer').innerHTML = `
-   <div class="container">
-      <div class='safetyPic'>
-      <img src="img/covidupdateimage.jpg" width="700" height=600">
+   <div id="mainCard">
+         <div class="heading">
+            <div class="left">
+               <h2>Latest Update</h2>
+               <p>23/05/2021 - 6:00 PM</p>
+            </div>
+            <div class="right">
+               <p>
+                  COVID-19<br />
+                  RESPONSE
+               </p>
+            </div>
+         </div>
+
+         <div class="col col-1">
+            <div class="newCasesToday highlight">
+               <p class="num">1,559</p>
+               <p class="text">New Cases <br />Today</p>
+            </div>
+            <div class="totalNumberOfCases highlight">
+               <p class="num">55,924</p>
+               <p class="text">
+                  Total Number<br />
+                  of Cases
+               </p>
+            </div>
+            <div class="activeCases">
+               <p class="num">23,464</p>
+               <p class="text">
+                  Active<br />
+                  Cases
+               </p>
+            </div>
+            <div class="samples">
+               <p class="num">5,834</p>
+               <p class="text">
+                  Samples (tested in<br />
+                  the last 24 hrs)
+               </p>
+            </div>
+            <div class="inHospitals">
+               <p class="num">290</p>
+               <p class="text">In Hospitals</p>
+            </div>
+            <div class="recoveries">
+               <p class="num">32,322</p>
+               <p class="text">Recoveries</p>
+            </div>
+            <div class="deaths">
+               <p class="num">129</p>
+               <p class="text">Deaths</p>
+            </div>
+         </div>
+
+         
+            <div class="col col-2">
+               <div class="greaterMale">
+                  <p class="num">1,135</p>
+                  <p class="text">Greater Male'<br> Area</p>
+               </div>
+               <div class="islands">
+                  <p class="num">401</p>
+                  <p class="text">Inhabited <br>Islands</p>
+               </div>
+               <div class="resorts">
+                  <p class="num">20</p>
+                  <p class="text">Operational <br>Resorts</p>
+               </div>
+               <div class="nResorts">
+                  <p class="num">00</p>
+                  <p class="text">Non-operational<br> Resorts</p>
+               </div>
+               <div class="liveaboards">
+                  <p class="num">03</p>
+                  <p class="text">Liveboards</p>
+               </div>
+               <div class="islandsUnderDev">
+                  <p class="num">00</p>
+                  <p class="text">Islands under<br> development</p>
+               </div>
+               <div class="industrial">
+                  <p class="num">00</p>
+                  <p class="text">
+                     Industrial/islands<br />
+                     used for other<br> purposes
+                  </p>
+               </div>
+            
+         </div>
+         
+
+         <div class="bottomText">
+            <p>
+               Confirmed cases include <strong>9</strong> deceased positives
+               whose cause of death is not directly due to COVID-19
+            </p>
+         </div>
       </div>
-   </div>
 `;
 };
 
