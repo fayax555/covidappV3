@@ -93,7 +93,7 @@ const washState = function (page) {
       <div class="slide">
          <div class="washContainer">
             <div class="washContent">
-               <img src="img/wash/${i}.jpg" alt="" />
+               <img src="img/washImages/${i}.jpg" alt="" />
                <p class="number">${i}</p>
                <p class="text">${textArray[i - 2]}</p>
             </div>
@@ -123,7 +123,7 @@ const washState = function (page) {
                <div class="slide s1">
                   <div class="washContainer">
                      <div class="washContent">
-                        <img src="img/wash/1.jpg" alt="" />
+                        <img src="img/washImages/1.jpg" alt="" />
                         <p class="number">1</p>
                         <p class="text">Wet hands with water</p>
                      </div>
