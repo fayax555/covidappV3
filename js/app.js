@@ -105,7 +105,7 @@ const washState = function (page) {
    <div class="washbox">
       <div class="btnStartBox">
          <button class='btnStartSlides'>START</button>
-         <p>The slideshow is current playing. Please stop the slideshow first before going back</p>
+         <p>The slideshow is current playing. Stop the slideshow first before going back</p>
       </div>
          <div class="slidershow middle">
             <div class="slides">
