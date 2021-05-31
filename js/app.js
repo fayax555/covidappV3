@@ -300,10 +300,10 @@ const style = document.querySelector('style');
 
 const btnWashStyle = /* css */ `
 .item-2 {
-   background: url('/img/wash.jpg') no-repeat center center/cover;
+   background: url('img/wash.jpg') no-repeat center center/cover;
 }
 .item-2:hover {
-   background: url('/img/wash.gif') no-repeat center center/cover;
+   background: url('img/wash.gif') no-repeat center center/cover;
 }`;
 
 style.innerHTML += btnWashStyle;
