@@ -92,9 +92,15 @@ body {
 .item-1 {
    background: url('../img/safety.jpg') no-repeat center center/cover;
 }
+
+.item-2:hover.lazy {
+   background-image: none;
+}
+
 .item-2 {
    background: url('../img/wash.jpg') no-repeat center center/cover;
 }
+
 .item-2:hover {
    background: url('../img/wash.gif') no-repeat center center/cover;
 }

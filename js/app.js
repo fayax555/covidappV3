@@ -29,6 +29,7 @@ const homeState = function (page) {
             <a id="covidUpdates" class="btnItem item-3"></a>
             <a id="quiz" class="btnItem item-4"></a>
          </div>
+         <img style="display: none" src="img/wash.gif" alt="" /> <!-- for lazy loading -->
       </div>
    </div>
     `;
