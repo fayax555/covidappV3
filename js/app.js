@@ -92,7 +92,7 @@ const washState = function (page) {
       <div class="slide">
          <div class="washContainer">
             <div class="washContent">
-               <img src="img/wash/${i}.jpg" alt="" />
+               <img src="img/wash/${i}.JPG" alt="" />
                <p class="number">${i}</p>
                <p class="text">${textArray[i - 2]}</p>
             </div>
