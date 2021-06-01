@@ -30,8 +30,8 @@ body {
    margin-top: 23rem;
    left: 50%;
    transform: translate(-50%, -50%);
-   min-width: 950px;
-   max-width: 950px;
+   min-width: 960px;
+   max-width: 960px;
    max-height: 720px;
    min-height: 720px;
    background-color: var(--main-bg-color);
@@ -122,8 +122,8 @@ body {
 .container {
    background-color: var(--main-bg-color);
    padding: 2rem;
-   min-width: 950px;
-   max-width: 950px;
+   min-width: 960px;
+   max-width: 960px;
    margin: auto;
 }
 
@@ -492,7 +492,7 @@ label:active {
 }
 
 .endingScore span {
-   color: rgb(3, 51, 22);
+   color: rgb(11, 104, 65);
 }
 
 .endingScore p {

@@ -12,6 +12,7 @@
    white-space: nowrap;
    margin-top: 1rem;
    line-height: 1.2;
+   color: #09162d;
 }
 
 #mainCard .col div p {
@@ -20,11 +21,13 @@
 }
 
 .heading {
-   background-color: rgb(226, 72, 72);
+   /* background-color: rgb(223, 103, 103); */
+   background-color: rgba(235, 88, 80, 255);
    padding: 1.25rem;
    display: flex;
    justify-content: space-between;
    margin-bottom: 1rem;
+   font-weight: bold;
 }
 
 .heading h2 {
@@ -62,7 +65,7 @@
 }
 
 #mainCard .col-1 .highlight {
-   background-color: #fcc7c7 !important;
+   background-color: #f5a7a3 !important;
    border-radius: 5px;
    padding: 0.5rem 1rem;
 }
