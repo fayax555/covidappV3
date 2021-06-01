@@ -252,17 +252,19 @@ const covidUpdatesState = function () {
 `;
 };
 
+let btnAnsCount = 0;
 let quizScore = 0;
 const quizState = function () {
    /*html*/
    document.querySelector('.mainContainer').innerHTML = `
    <div class="container">
       <div class="scoreCounter">
-         <div class="liveScoreCount">
-            Score: <span class='scoreNum'>0</span>
+         <div>
+            <p class="questionNumberParent">Question Number <span class="questionNumber">0</span>/7</p>
+            <p class="liveScoreCount">Score: <span class='scoreNum'>0</span></p> 
          </div>
          <div class="endingScore">
-            Your score is <span>0</span>
+            <p>Your score is <span>0</span> out of 7</p> 
             <p>Click the Restart button below to start the quiz again</p>
          </div> 
       </div>
@@ -378,6 +380,7 @@ mainApp.addEventListener('click', (e) => {
 
    if (e.target.classList.contains('btnHome') && !isSlideShowPlaying) {
       page.change(new homeState());
+      quizScore = 0; // have to reset the score here
    }
    if (e.target.classList.contains('btnCredits') && !isSlideShowPlaying) {
       page.change(new creditsState());
@@ -396,11 +399,12 @@ mainApp.addEventListener('click', (e) => {
 
 const correctAnswerAudio = new Audio('./assets/audio/correct.mp3');
 const wrongAnswerAudio = new Audio('./assets/audio/wrong.mp3');
+
 function quizCodes() {
    page.change(new quizState());
    // Quiz code
 
-   let btnAnsCount = 0;
+   let totalQuestionCounter = 1;
    const startButton = document.getElementById('start-btn');
    const nextButton = document.getElementById('next-btn');
    const ans = document.getElementById('ans');
@@ -419,6 +423,8 @@ function quizCodes() {
 
    function startGame() {
       mainApp.querySelector('.liveScoreCount').style.visibility = 'visible';
+      mainApp.querySelector('.questionNumberParent').style.visibility =
+         'visible';
       startButton.classList.add('hide');
       shuffledQuestions = questions.sort(() => Math.random() - 0.5);
       currentQuestionIndex = 0;
@@ -427,6 +433,10 @@ function quizCodes() {
    }
 
    function setNextQuestion() {
+      mainApp.querySelector('.questionNumber').innerText =
+         totalQuestionCounter++;
+      console.log(totalQuestionCounter);
+      // totalQuestionCounter .num {}
       btnAnsCount = 0;
       resetState();
       ans.textContent = '';
@@ -466,7 +476,6 @@ function quizCodes() {
          correctAnswerAudio.play();
          selectedButton.classList.add('bg-green');
          if (btnAnsCount <= 1) {
-            console.log(btnAnsCount);
             quizScore++;
             mainApp.querySelector('.scoreNum').innerText = quizScore;
          }
@@ -480,9 +489,12 @@ function quizCodes() {
          nextButton.classList.remove('hide');
       } else {
          setTimeout(() => {
+            totalQuestionCounter = 1;
             mainApp.querySelector('.liveScoreCount').style.visibility =
                'hidden';
             mainApp.querySelector('.endingScore').style.display = 'block';
+            mainApp.querySelector('.questionNumberParent').style.visibility =
+               'hidden';
             questionContainerElement.style.display = 'none';
             /* html */
             startButton.innerText = 'Restart';

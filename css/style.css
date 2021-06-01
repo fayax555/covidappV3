@@ -241,7 +241,7 @@ a {
 }
 .middle {
    position: absolute;
-   top: 50%;
+   top: 55%;
    left: 50%;
    max-height: inherit;
    transform: translate(-50%, -50%);
@@ -296,6 +296,7 @@ input[name='r'] {
 
 .btnStartBox {
    display: flex;
+   padding-top: 0.5rem;
 }
 
 .btnStartBox p {
@@ -500,4 +501,9 @@ label:active {
 
 .next-btn {
    margin-bottom: 3rem !important;
+}
+
+.questionNumberParent {
+   visibility: hidden;
+   padding-left: 3rem;
 }
