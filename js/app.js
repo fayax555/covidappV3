@@ -252,23 +252,35 @@ const covidUpdatesState = function () {
 `;
 };
 
+let quizScore = 0;
 const quizState = function () {
    /*html*/
-   document.querySelector('.mainContainer').innerHTML = `<div class="container">
-   <div id="question-container" class="hide">
-      <div id="ans"></div>
-         <div id="question">Question</div>
-         <div id="answer-buttons" class="btn-grid">
-            <button class="btnQuiz">Answer 1</button>
-            <button class="btnQuiz">Answer 2</button>
-            <button class="btnQuiz">Answer 3</button>
+   document.querySelector('.mainContainer').innerHTML = `
+   <div class="container">
+      <div class="scoreCounter">
+         <div class="liveScoreCount">
+            Score: <span class='scoreNum'>0</span>
          </div>
+         <div class="endingScore">
+            Your score is <span>0</span>
+            <p>Click the Restart button below to start the quiz again</p>
+         </div> 
       </div>
+      <div id="question-container" class="hide">
+         <div id="ans"></div>
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+               <button class="btnQuiz">Answer 1</button>
+               <button class="btnQuiz">Answer 2</button>
+               <button class="btnQuiz">Answer 3</button>
+            </div>
+         </div>
       <div class="controls">
          <button id="start-btn" class="start-btn btnQuiz">Start</button>
          <button id="next-btn" class="next-btn btnQuiz hide">Next</button>
       </div>
    </div>
+   
 `;
 };
 
@@ -382,13 +394,13 @@ mainApp.addEventListener('click', (e) => {
    }
 });
 
-// --------- TODO: SHOW SCORE AT THE END OF THE GAME --------------
 const correctAnswerAudio = new Audio('./assets/audio/correct.mp3');
 const wrongAnswerAudio = new Audio('./assets/audio/wrong.mp3');
 function quizCodes() {
    page.change(new quizState());
    // Quiz code
-   let score = 0;
+
+   let btnAnsCount = 0;
    const startButton = document.getElementById('start-btn');
    const nextButton = document.getElementById('next-btn');
    const ans = document.getElementById('ans');
@@ -406,6 +418,7 @@ function quizCodes() {
    });
 
    function startGame() {
+      mainApp.querySelector('.liveScoreCount').style.visibility = 'visible';
       startButton.classList.add('hide');
       shuffledQuestions = questions.sort(() => Math.random() - 0.5);
       currentQuestionIndex = 0;
@@ -414,6 +427,7 @@ function quizCodes() {
    }
 
    function setNextQuestion() {
+      btnAnsCount = 0;
       resetState();
       ans.textContent = '';
       showQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -444,13 +458,18 @@ function quizCodes() {
    function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct;
+      btnAnsCount++;
 
       if (correct) {
          ans.className = 'txt-green';
          ans.textContent = 'CORRECT!';
          correctAnswerAudio.play();
          selectedButton.classList.add('bg-green');
-         score++;
+         if (btnAnsCount <= 1) {
+            console.log(btnAnsCount);
+            quizScore++;
+            mainApp.querySelector('.scoreNum').innerText = quizScore;
+         }
       } else {
          ans.className = 'txt-red';
          ans.textContent = 'WRONG!';
@@ -460,9 +479,23 @@ function quizCodes() {
       if (shuffledQuestions.length > currentQuestionIndex + 1) {
          nextButton.classList.remove('hide');
       } else {
-         startButton.innerText = 'Restart';
-         startButton.classList.add('restart-btn');
-         startButton.classList.remove('hide');
+         setTimeout(() => {
+            mainApp.querySelector('.liveScoreCount').style.visibility =
+               'hidden';
+            mainApp.querySelector('.endingScore').style.display = 'block';
+            questionContainerElement.style.display = 'none';
+            /* html */
+            startButton.innerText = 'Restart';
+            startButton.classList.add('restart-btn');
+            startButton.classList.remove('hide');
+            mainApp.querySelector('.endingScore span').innerText = quizScore;
+            startButton.addEventListener('click', (e) => {
+               mainApp.querySelector('.scoreNum').innerText = 0;
+               mainApp.querySelector('.endingScore').style.display = 'none';
+               quizScore = 0;
+               questionContainerElement.style.display = 'block';
+            });
+         }, 1000);
       }
    }
 
