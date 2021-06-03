@@ -90,3 +90,8 @@ h1.heading {
    text-align: center;
    margin-top: -1rem;
 }
+
+.vaccinated {
+   background-color: #47dd74 !important;
+   border-radius: 5px;
+}

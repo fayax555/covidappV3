@@ -13,6 +13,7 @@ covidData.then((res) => {
       active,
       recovered,
       deaths,
+      vaccinated,
    } = res.data;
    console.log(newCases, total, active, recovered, deaths);
 
@@ -27,9 +28,9 @@ covidData.then((res) => {
          </div>
          <div class="col col-1">
             <div class="newCasesToday highlight">
-                  <p class="num">${newCases}</p>
-                  <p class="text">New Cases <br />Today</p>
-               </div>
+               <p class="num">${newCases}</p>
+               <p class="text">New Cases <br />Today</p>
+            </div>
             <div class="totalNumberOfCases highlight">
                <p class="num">${total}</p>
                <p class="text">
@@ -51,6 +52,10 @@ covidData.then((res) => {
             <div class="deaths">
                <p class="num">${deaths}</p>
                <p class="text">Deaths</p>
+            </div>
+            <div class="vaccinated">
+               <p class="num">${vaccinated}</p>
+               <p class="text">Vaccinated</p>
             </div>
          </div>
          <div class="heading c2">
