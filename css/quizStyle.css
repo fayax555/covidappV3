@@ -1,0 +1,139 @@
+/* Quiz */
+#question-container {
+   margin-top: 1rem;
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.1rem;
+   padding: 1.5rem 2rem;
+}
+
+#question-container #ans {
+   font-size: 1.8rem;
+   margin-bottom: 1rem;
+   height: 3rem;
+}
+
+#question-container #question {
+   font-weight: bold;
+   font-size: 1.8rem;
+}
+
+.btn-grid {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1rem;
+   padding: 0 3rem;
+   margin: 20px 0;
+}
+
+.btnQuiz {
+   background-color: rgb(2, 0, 128);
+   border-radius: 5px;
+   padding: 10px;
+   color: white;
+   outline: none;
+   cursor: pointer;
+   font-size: 1.2rem;
+   font-weight: bold;
+   transition: 0.3s ease-in-out;
+}
+
+.btnQuiz:hover {
+   opacity: 0.7;
+}
+
+.btnQuiz.correct {
+   background-color: green;
+}
+
+.start-btn,
+.next-btn {
+   font-size: 1.5rem;
+   font-weight: bold;
+   padding: 10px 20px;
+}
+
+.controls {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.controls .start-btn,
+.next-btn {
+   padding: 1.25rem 2.25rem;
+   background-color: #7a1bb1;
+}
+
+.restart-btn {
+   background-color: rgb(43, 22, 16) !important;
+   margin-top: 0rem !important;
+}
+
+.txt-green {
+   color: green;
+}
+.txt-red {
+   color: red;
+}
+
+.bg-green {
+   background-color: green !important;
+}
+.bg-red {
+   background-color: red !important;
+}
+
+.controls .start-btn {
+   margin-top: 1.5rem;
+}
+
+#answer-buttons .btnQuiz {
+   padding: 1rem 2rem;
+}
+
+.hide {
+   display: none;
+}
+
+.scoreCounter {
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.liveScoreCount {
+   text-align: right;
+   padding-right: 5rem;
+   padding-top: 1rem;
+   margin-bottom: -3rem;
+   margin-top: -3rem;
+   color: rgb(7, 8, 66);
+   visibility: hidden;
+}
+
+.endingScore {
+   display: none;
+   padding: 3rem;
+   margin-bottom: 2rem;
+   font-size: 2.5rem;
+   text-align: center;
+   color: rgb(34, 8, 28);
+}
+
+.endingScore span {
+   color: rgb(11, 104, 65);
+}
+
+.endingScore p {
+   font-size: 1.6rem;
+}
+.questionNumberParent {
+   visibility: hidden;
+   padding-left: 3rem;
+}
+
+.quizStartText {
+   text-align: center;
+   padding-top: 5rem;
+   font-size: 1.5rem;
+}
