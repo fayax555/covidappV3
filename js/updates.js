@@ -1,54 +1,95 @@
-const covidData = axios.get('https://fayaxcovidapimv.herokuapp.com/');
+const covidData = axios.get('https://fayaxcovidapimv.herokuapp.com/mihaaru');
 const covidContent = mainApp.querySelector('#covidContent');
 
 covidData.then((res) => {
+   console.log(res.data);
    const {
+      wTotal,
+      wRecovered,
+      wActive,
+      wDeaths,
+      newCases,
       total,
-      activeCases: active,
-      recoveries,
-      totalDeaths: deaths,
+      active,
+      recovered,
+      deaths,
    } = res.data;
-   console.log(total, active, recoveries, deaths);
+   console.log(newCases, total, active, recovered, deaths);
 
    covidContent.innerHTML = /* html */ ` 
-    <div id="mainCard">
-    <div class="heading">
+      <div id="mainCard">
+         <h1 class="heading">Latest Update</h1>
+         <div class="heading">
             <div class="left">
-               <h2>Latest Update</h2>
+               <h2>Maldives</h2>
                <p></p>
             </div>
-            <div class="right">
-               <p>
-                  COVID-19<br />
-                  RESPONSE
+         </div>
+         <div class="col col-1">
+            <div class="newCasesToday highlight">
+                  <p class="num">${newCases}</p>
+                  <p class="text">New Cases <br />Today</p>
+               </div>
+            <div class="totalNumberOfCases highlight">
+               <p class="num">${total}</p>
+               <p class="text">
+                  Total Number<br />
+                  of Cases
                </p>
             </div>
+            <div class="activeCases">
+               <p class="num">${active}</p>
+               <p class="text">
+                  Active<br />
+                  Cases
+               </p>
+            </div>
+            <div class="recoveries">
+               <p class="num">${recovered}</p>
+               <p class="text">Recoveries</p>
+            </div>
+            <div class="deaths">
+               <p class="num">${deaths}</p>
+               <p class="text">Deaths</p>
+            </div>
          </div>
-      <div class="col col-1">
-         <div class="totalNumberOfCases highlight">
-            <p class="num">${total}</p>
-            <p class="text">
-               Total Number<br />
-               of Cases
+         <div class="heading c2">
+            <div class="left">
+               <h2>Worldwide</h2>
+               <p></p>
+            </div>
+         </div>
+         <div class="col col-2">
+            
+            <div >
+               <p class="num">${wTotal}</p>
+               <p class="text">
+                  Total Number<br />
+                  of Cases
+               </p>
+            </div>
+            <div>
+               <p class="num">${wActive}</p>
+               <p class="text">
+                  Active Cases
+               </p>
+            </div>
+            <div >
+               <p class="num">${wRecovered}</p>
+               <p class="text">Recoveries</p>
+            </div>
+            <div>
+               <p class="num">${wDeaths}</p>
+               <p class="text">Deaths</p>
+            </div>
+         </div>
+
+         <div class="bottomText">
+            <p>
+               source: mihaaru.com
             </p>
-         </div>
-         <div class="activeCases">
-            <p class="num">${active}</p>
-            <p class="text">
-               Active<br />
-               Cases
-            </p>
-         </div>
-         <div class="recoveries">
-            <p class="num">${recoveries}</p>
-            <p class="text">Recoveries</p>
-         </div>
-         <div class="deaths">
-            <p class="num">${deaths}</p>
-            <p class="text">Deaths</p>
          </div>
       </div>
-   </div>
 `;
 });
 
