@@ -479,6 +479,7 @@ label:active {
    padding-right: 5rem;
    padding-top: 1rem;
    margin-bottom: -3rem;
+   margin-top: -3rem;
    color: rgb(7, 8, 66);
    visibility: hidden;
 }
@@ -499,11 +500,6 @@ label:active {
 .endingScore p {
    font-size: 1.6rem;
 }
-
-.next-btn {
-   margin-bottom: 3rem !important;
-}
-
 .questionNumberParent {
    visibility: hidden;
    padding-left: 3rem;

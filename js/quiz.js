@@ -15,7 +15,7 @@ mainApp.addEventListener('click', (e) => {
             <div class='scoreCounter'>
                <div>
                   <p class='questionNumberParent'>
-                     Question Number <span class='questionNumber'>0</span>/7
+                     Question <span class='questionNumber'>0</span>/7
                   </p>
                   <p class='liveScoreCount'>
                      Score: <span class='scoreNum'>0</span>
