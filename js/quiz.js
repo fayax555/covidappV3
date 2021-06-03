@@ -12,6 +12,11 @@ mainApp.addEventListener('click', (e) => {
       or else the can't use querySelector/getElementsByID on the elements */
          /* html */ `
          <div class='container'>
+         <div class="quizStartText">
+            <h3>Test Your COVID-19 Knowledge</h3>
+            <p>When you click the correct answer as your first option, you will gain a score point</p>
+            <p>You can still check other answers to see which one is correct before click 'Next'</p>
+         </div>
             <div class='scoreCounter'>
                <div>
                   <p class='questionNumberParent'>
@@ -77,6 +82,7 @@ function quizCodes() {
       mainApp.querySelector('.liveScoreCount').style.visibility = 'visible';
       mainApp.querySelector('.questionNumberParent').style.visibility =
          'visible';
+      mainApp.querySelector('.quizStartText').style.display = 'none';
       startButton.classList.add('hide');
       shuffledQuestions = questions.sort(() => Math.random() - 0.5);
       currentQuestionIndex = 0;

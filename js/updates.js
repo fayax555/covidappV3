@@ -12,11 +12,19 @@ covidData.then((res) => {
 
    covidContent.innerHTML = /* html */ ` 
     <div id="mainCard">
-      <div class="col col-1">
-         <div class="newCasesToday highlight">
-            <p class="num">-</p>
-            <p class="text">New Cases <br />Today</p>
+    <div class="heading">
+            <div class="left">
+               <h2>Latest Update</h2>
+               <p></p>
+            </div>
+            <div class="right">
+               <p>
+                  COVID-19<br />
+                  RESPONSE
+               </p>
+            </div>
          </div>
+      <div class="col col-1">
          <div class="totalNumberOfCases highlight">
             <p class="num">${total}</p>
             <p class="text">

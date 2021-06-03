@@ -2,7 +2,7 @@ const creditsHTML = /*html*/ `
    <div id="content" class="container">
       <div class="personContainer">
          <div class="person">
-            <img src="./img/fayaz.jpg" height="200" width="200" alt="" />
+            <img src="./img/fayaz.png" height="200" width="200" alt="" />
             <h3>Hassan Fayaz</h3>
             <p>s058771</p>
          </div>

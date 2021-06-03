@@ -153,36 +153,6 @@ a {
    opacity: 0.8;
 }
 
-/* tabs */
-.tabs {
-   justify-content: center;
-}
-
-[data-tab-content] {
-   display: none;
-   margin: 0.5rem;
-   padding: 1rem;
-   height: 550px;
-}
-
-.tabs .active {
-   background-color: #060674;
-}
-
-.active[data-tab-content] {
-   display: grid;
-   grid-template-rows: 1fr 2fr;
-}
-
-.tabs {
-   display: flex;
-   list-style: none;
-}
-
-.tabs a {
-   cursor: pointer;
-}
-
 /* Safety Pic */
 
 .personContainer {
@@ -192,7 +162,7 @@ a {
 }
 .p3 {
    grid-column: 1 / span 2;
-   margin-top: 2rem;
+   margin-top: 1rem;
 }
 .person p {
    font-size: 1rem;
@@ -458,7 +428,7 @@ label:active {
 }
 
 .controls .start-btn {
-   margin-top: 6rem;
+   margin-top: 1.5rem;
 }
 
 #answer-buttons .btnQuiz {
@@ -503,4 +473,10 @@ label:active {
 .questionNumberParent {
    visibility: hidden;
    padding-left: 3rem;
+}
+
+.quizStartText {
+   text-align: center;
+   padding-top: 5rem;
+   font-size: 1.5rem;
 }
