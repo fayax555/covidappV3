@@ -33,6 +33,7 @@ const mainApp = document.querySelector('#mainApp');
 mainApp.addEventListener('click', (e) => {
    if (e.target.id === 'wash') {
       mainApp.querySelector('.mainContainer').innerHTML = /* html */ `
+      <h2 class="washH2">HOW TO WASH YOUR HANDS</h2>
          <div class="washbox">
             <div class="btnStartBox">
                <button class='btnStartSlides'>START</button>

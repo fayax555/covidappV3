@@ -158,3 +158,11 @@ input[name='r'] {
 label:active {
    background-color: #7a1bb1;
 } */
+.washH2 {
+   margin-bottom: -1.5rem;
+   color: #39154e;
+   margin-top: 1rem;
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.9rem;
+}
