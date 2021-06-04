@@ -127,3 +127,16 @@
    color: #094b4b;
    font-size: 1.9rem;
 }
+
+#safety ul {
+   padding-left: 2rem;
+}
+
+#safety ul li {
+   list-style-type: disc;
+   font-size: 1.2rem;
+}
+
+#safety .s6 .box {
+   margin-top: 3rem;
+}
