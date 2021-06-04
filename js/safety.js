@@ -2,20 +2,27 @@
 
 const safetyHTML = /*html*/ `
    <div id="safety">
-      <i class="fas fa-arrow-left" id="prevBtn"></i>
-      <i class="fas fa-arrow-right" id="nextBtn"></i>
+      <i class="arrow left" id="prevBtn"></i>
+      <i class="arrow right"  id="nextBtn"></i>
       <div class="safetyContainer">
          <div class="s6" id="lastClone">
             <h3>
                PRACTICE OTHER GOOD HEALTH HABITS
             </h3>
             <div class="box">
-               <p>
-                  Routinely clean and disinfect frequently touched objects
-                  and surfaces.
-               </p>
-               <img src="img/safetySvg/s6.svg" />
-            </div>
+                  <div>
+                     <p>Routinely clean and disinfect frequently touched objects
+                     and surfaces.</p>
+                     <ul>
+                        <li>Get Sleep</li>
+                        <li>Be Physically Active</li>
+                        <li>Manage Your Stress</li>
+                        <li>Drink Plenty of Fluids</li>
+                        <li>Eat Nutritious Foods</li>
+                     </ul>
+                  </div>
+                  <img src="img/safetySvg/s6.svg" />
+               </div>
          </div>
          <div class="s1">
             <h3>AVOID CLOSE CONTACT</h3>
@@ -74,10 +81,17 @@ const safetyHTML = /*html*/ `
                PRACTICE OTHER GOOD HEALTH HABITS
             </h3>
                <div class="box">
-                  <p>
-                     Routinely clean and disinfect frequently touched objects
-                     and surfaces.
-                  </p>
+                  <div>
+                     <p>Routinely clean and disinfect frequently touched objects
+                     and surfaces.</p>
+                     <ul>
+                        <li>Get Sleep</li>
+                        <li>Be Physically Active</li>
+                        <li>Manage Your Stress</li>
+                        <li>Drink Plenty of Fluids</li>
+                        <li>Eat Nutritious Foods</li>
+                     </ul>
+                  </div>
                   <img src="img/safetySvg/s6.svg" />
                </div>
          </div>

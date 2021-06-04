@@ -12,6 +12,11 @@ const homeHTML = /* html */ `
 </div>`;
 
 const home = mainApp.querySelector('#home');
+
+window.addEventListener('DOMContentLoaded', () => {
+   mainContainer.innerHTML = homeHTML;
+});
+
 home.addEventListener('click', (e) => {
    mainContainer.innerHTML = homeHTML;
    quizScore = 0;

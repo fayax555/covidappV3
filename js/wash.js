@@ -20,7 +20,7 @@ for (let i = 2; i < 11; i++) {
    <div class="slide">
       <div class="washContainer">
          <div class="washContent">
-            <img src="img/washImages/${i}.jpg" alt="" />
+            <img src="img/washSvg/${i}.svg" alt="" />
             <p class="number">${i}</p>
             <p class="text">${textArray[i - 2]}</p>
          </div>
@@ -53,7 +53,7 @@ mainApp.addEventListener('click', (e) => {
                   <div class="slide s1">
                      <div class="washContainer">
                         <div class="washContent">
-                           <img src="img/washImages/1.jpg" alt="" />
+                           <img src="img/washSvg/1.svg" alt="" />
                            <p class="number">1</p>
                            <p class="text">Wet hands with water</p>
                         </div>
@@ -111,7 +111,7 @@ mainApp.addEventListener('click', (e) => {
                   home.disabled = false;
                   credits.disabled = false;
                }
-            }, 2700);
+            }, 2900);
             btnClickCounter++;
          } else if (btnClickCounter % 2 === 1) {
             clearInterval(interval);

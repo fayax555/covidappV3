@@ -68,11 +68,13 @@
    margin-top: -2rem;
 }
 #safety i {
-   opacity: 0.5;
+   opacity: 0.6;
    transition: 0.3s ease-in-out;
+   color: rgb(22, 110, 182);
 }
 #safety i:hover {
    opacity: 1;
+   color: rgb(22, 74, 117);
 }
 
 #safety #prevBtn {
@@ -81,7 +83,6 @@
    z-index: 10;
    left: 5%;
    font-size: 50px;
-   color: rgb(96, 17, 243);
    cursor: pointer;
 }
 
@@ -91,7 +92,6 @@
    z-index: 10;
    right: 5%;
    font-size: 50px;
-   color: rgb(51, 10, 10);
    cursor: pointer;
 }
 
@@ -105,4 +105,19 @@
 }
 #safety .s3 .box img {
    width: 280px;
+}
+
+#safety .arrow {
+   border: solid rgb(7, 112, 103);
+   border-width: 0 7px 7px 0;
+   display: inline-block;
+   padding: 20px;
+}
+
+#safety .right {
+   transform: rotate(-45deg);
+}
+
+#safety .left {
+   transform: rotate(135deg);
 }
