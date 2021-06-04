@@ -1,24 +1,31 @@
-const covidData = axios.get('https://fayaxcovidapimv.herokuapp.com/mihaaru');
 const covidContent = mainApp.querySelector('#covidContent');
 
-covidData.then((res) => {
-   console.log(res.data);
-   const {
-      date,
-      wTotal,
-      wRecovered,
-      wActive,
-      wDeaths,
-      newCases,
-      total,
-      active,
-      recovered,
-      deaths,
-      vaccinated,
-   } = res.data;
-   console.log(newCases, total, active, recovered, deaths);
+const getCovidData = async () => {
+   const response = await fetch(
+      'https://fayaxcovidapimv.herokuapp.com/mihaaru'
+   );
+   return await response.json();
+};
 
-   covidContent.innerHTML = /* html */ ` 
+getCovidData()
+   .then((res) => {
+      console.log(res);
+      const {
+         date,
+         wTotal,
+         wRecovered,
+         wActive,
+         wDeaths,
+         newCases,
+         total,
+         active,
+         recovered,
+         deaths,
+         vaccinated,
+      } = res;
+      console.log(newCases, total, active, recovered, deaths);
+
+      covidContent.innerHTML = /* html */ ` 
       <div id="mainCard">
          <h1 class="heading">Latest Update <span class="date">${date}</span></h1>
          <div class="heading">
@@ -97,7 +104,8 @@ covidData.then((res) => {
          </div>
       </div>
 `;
-});
+   })
+   .catch((error) => console.error(error));
 
 if (covidContent.innerHTML === '') {
    /* html */
