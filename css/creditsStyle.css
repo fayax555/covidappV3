@@ -1,0 +1,16 @@
+.personContainer {
+   display: grid;
+   text-align: center;
+   grid-template-columns: 1fr 1fr;
+}
+.p3 {
+   grid-column: 1 / span 2;
+   margin-top: 1rem;
+}
+.person p {
+   font-size: 1rem;
+}
+
+.person img {
+   border-radius: 50%;
+}

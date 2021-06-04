@@ -4,6 +4,7 @@ const covidContent = mainApp.querySelector('#covidContent');
 covidData.then((res) => {
    console.log(res.data);
    const {
+      date,
       wTotal,
       wRecovered,
       wActive,
@@ -19,7 +20,7 @@ covidData.then((res) => {
 
    covidContent.innerHTML = /* html */ ` 
       <div id="mainCard">
-         <h1 class="heading">Latest Update</h1>
+         <h1 class="heading">Latest Update <span class="date">${date}</span></h1>
          <div class="heading">
             <div class="left">
                <h2>Maldives</h2>
