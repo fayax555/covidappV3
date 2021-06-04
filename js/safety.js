@@ -4,6 +4,7 @@ const safetyHTML = /*html*/ `
    <div id="safety">
       <i class="arrow left" id="prevBtn"></i>
       <i class="arrow right"  id="nextBtn"></i>
+      <h2>SAFETY PRECAUTIONS</h2>
       <div class="safetyContainer">
          <div class="s6" id="lastClone">
             <h3>

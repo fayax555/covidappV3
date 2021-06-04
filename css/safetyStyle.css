@@ -6,7 +6,7 @@
    margin: auto;
    line-height: 1.8;
    font-weight: bold;
-   margin-top: 3rem;
+   margin-top: 1rem;
    overflow: hidden;
 }
 
@@ -120,4 +120,10 @@
 
 #safety .left {
    transform: rotate(135deg);
+}
+
+#safety h2 {
+   text-align: center;
+   color: #094b4b;
+   font-size: 1.9rem;
 }
