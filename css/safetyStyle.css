@@ -21,7 +21,7 @@
    padding: 0.7rem;
    padding-left: 3rem;
    width: 700px;
-   margin-bottom: 1rem;
+   margin-bottom: 2rem;
    font-size: 1.4rem;
 }
 
@@ -33,7 +33,7 @@
 
 #safety .box {
    display: grid;
-   grid-template-columns: 1fr 2fr;
+   grid-template-columns: 1fr 1fr;
    align-items: center;
 }
 
@@ -93,4 +93,16 @@
    font-size: 50px;
    color: rgb(51, 10, 10);
    cursor: pointer;
+}
+
+#safety .box img {
+   width: 300px;
+}
+
+#safety .s2 .box img {
+   width: 350px;
+   margin-right: 3rem;
+}
+#safety .s3 .box img {
+   width: 280px;
 }

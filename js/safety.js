@@ -14,7 +14,7 @@ const safetyHTML = /*html*/ `
                   Routinely clean and disinfect frequently touched objects
                   and surfaces.
                </p>
-               <object data="img/safetySvg/s6.svg" width="400" height="400"></object>
+               <img src="img/safetySvg/s6.svg" />
             </div>
          </div>
          <div class="s1">
@@ -24,7 +24,7 @@ const safetyHTML = /*html*/ `
                   Avoid close contact with sick people, and when you're sick,
                   maintain distance at least 6-ft
                </p>
-               <object data="img/safetySvg/s1.svg" width="400" height="400"></object>
+               <img src="img/safetySvg/s1.svg" />
             </div>
          </div>
          <div class="s2">
@@ -34,7 +34,7 @@ const safetyHTML = /*html*/ `
                      If you feel sick, go home to prevent the spread of germs,
                      and remain at home until better
                   </p>
-                  <object data="img/safetySvg/s2.svg" width="400" height="400"></object>
+                  <img src="img/safetySvg/s2.svg" />
                </div>
          </div>
          <div class="s3">
@@ -44,7 +44,7 @@ const safetyHTML = /*html*/ `
                      Cough or sneeze into a tissue, then throw the tissue in the
                      trash
                   </p>
-                  <object data="img/safetySvg/s3.svg" width="350" height="350"></object>
+                  <img src="img/safetySvg/s3.svg" />
                </div>
          </div>
          <div class="s4">
@@ -54,7 +54,7 @@ const safetyHTML = /*html*/ `
                      Wash your hands with soap and water for 20 seconds. Or use
                      an alcohol-based hand rub
                   </p>
-                  <object data="img/safetySvg/s4.svg" width="400" height="400"></object>
+                  <img src="img/safetySvg/s4.svg" />
                </div>
          </div>
          <div class="s5">
@@ -66,7 +66,7 @@ const safetyHTML = /*html*/ `
                   Cough or sneeze into a tissue, then throw the tissue in the
                   trash
                </p>
-               <object data="img/safetySvg/s5.svg" width="400" height="400"></object>
+               <img src="img/safetySvg/s5.svg" />
             </div>
          </div>
          <div class="s6">
@@ -78,7 +78,7 @@ const safetyHTML = /*html*/ `
                      Routinely clean and disinfect frequently touched objects
                      and surfaces.
                   </p>
-                  <object data="img/safetySvg/s6.svg" width="400" height="400"></object>
+                  <img src="img/safetySvg/s6.svg" />
                </div>
          </div>
          <div class="s1" id="firstClone">
@@ -88,7 +88,7 @@ const safetyHTML = /*html*/ `
                      Avoid close contact with sick people, and when you're sick,
                      maintain distance at least 6-ft
                   </p>
-                  <object data="img/safetySvg/s1.svg" width="400" height="400"></object>
+                  <img src="img/safetySvg/s1.svg" />
                </div>
          </div>
       </div>
