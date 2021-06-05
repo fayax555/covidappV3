@@ -7,7 +7,7 @@ mainApp.addEventListener('click', (e) => {
    if (e.target.id === 'quiz') {
       mainContainer.innerHTML =
          /* had to insert the html code here, it fixed a problem of btn not found.
-            The quiz html must be inserted only after the quiz section in clicked.
+            The quiz html must be inserted only after the quiz section is clicked.
             The html code must be loaded before the quiz code does or else the 
             can't use querySelector/getElementsByID on the elements */
          /* html */ `
@@ -165,7 +165,7 @@ function quizCodes() {
                quizScore = 0;
                questionContainerElement.style.display = 'block';
             });
-         }, 1000);
+         }, 2500);
       }
    }
 
