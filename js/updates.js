@@ -109,10 +109,7 @@ getCovidData()
 
 if (covidContent.innerHTML === '') {
    /* html */
-   covidContent.innerHTML = `<img src="img/loading.gif" style="display: block;
-   margin-left: auto;
-   margin-right: auto;
-   width: 50%; padding-top: 4rem">`;
+   covidContent.innerHTML = `<div class='loader' style='margin-top: 13rem'></div>`;
 }
 
 mainApp.addEventListener('click', (e) => {
